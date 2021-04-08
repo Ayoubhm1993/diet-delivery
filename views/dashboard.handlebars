@@ -1,0 +1,42 @@
+
+<section class="user-profile">
+  <h3>User Information</h3>
+   <p>
+      {{user.user_profile.first_name}} {{user.user_profile.last_name}}
+    </p>
+    <p>
+      <label>Email:</label> {{user.email}}
+    </p>
+    <p>
+      <label>Display Name:</label> {{user.user_profile.display_name}}
+    </p>
+
+
+  <h3>Address</h3>
+    <p>
+      {{user.user_profile.street_address}}
+    </p>
+    <p>
+      {{user.user_profile.city}}, {{user.user_profile.state}} {{user.user_profile.zip_code}}
+    </p>
+</section>
+
+
+{{#if user.meals.length}}
+  <section class="user-meals">
+    <h2>Your Meals</h2>
+      <div class="meal-list">
+        {{#each user.meals as |meal|}}
+
+            {{> meal-info meal }}
+
+        {{/each}}
+      </div>
+  </section>
+{{/if}}
+
+
+
+
+<script src="/javascript/select-meal.js"></script>
+

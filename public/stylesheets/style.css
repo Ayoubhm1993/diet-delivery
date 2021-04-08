@@ -1,0 +1,483 @@
+:root {
+    --header-logo-font: 'Fugaz One', cursive;
+    --cta-font: 'Roboto Condensed', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    color: #333;
+    background: rgb(243,248,250);
+    background: linear-gradient(98deg, rgba(243,248,250,1) 0%, rgba(220,224,226,1) 100%);
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+}
+
+/* HEADER SECTION */
+.header {
+    /* background-color: rgb(65, 64, 64); */
+    background: rgb(3,30,31);
+    background: radial-gradient(circle, rgba(3,30,31,1) 0%, rgba(27,117,124,1) 0%, rgba(23,98,107,1) 37%, rgba(12,44,50,1) 100%);
+    box-shadow: 3px 3px 4px rgba(41, 40, 40, .7);
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .1% 5%;
+}
+
+.header-logo {
+    font-family: 'Fugaz One', cursive;
+    color: white;
+    font-size:.85em;
+    text-decoration: none;
+    transition: color .9s;
+}
+
+.nav-section {
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-button {
+    display: flex;
+}
+
+.header nav a, .dashboard-link, .logout-btn {
+    font-size: 1.25rem;
+    color: white;
+    font-weight: bold;
+    font-family: 'Ubuntu';
+    text-decoration: none;
+    margin: 10px;
+    transition: color .5s;
+    cursor: pointer;
+}
+
+.logout-btn {
+    background-color: #2d4c52;
+    border: none;
+    padding:6px;
+    border-radius: 2px;
+}
+
+.logout-btn:hover {
+    background-color: #4c7f88;
+}
+
+.header a:hover {
+    color: #85f5e6;
+}
+
+.header nav a:hover {
+    text-decoration: underline;
+}
+
+.dashboard-button a:hover {
+    color:green;
+}
+
+/* TOOLTIP FUNCTIONALITY */
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: auto;
+    background-color: #555;
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    top: 125%;
+    left: 30%;
+    margin-left: -60px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 26%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color:  transparent transparent #555 transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: .85;
+}
+
+.user-icon {
+    color: white;
+    padding-right: 5%;
+}
+
+/* HERO SECTION */
+.main-body {
+    display: flex;
+    flex-direction: column;
+    /* flex: 1; */
+}
+
+.hero {
+    background-image: url('/images/header-image.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment:fixed;
+    /* height: 80vh; */
+    margin-top: 4%;
+}
+
+.cta {
+    background-color: rgba(0,0,0,0.25);
+    width: 100%;
+    height: 80vh;
+    color: white;
+    display: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--cta-font);
+    text-align: center;
+}
+
+.cta-title-text {
+    font-size: 2rem;
+    width: 30%;
+    /* text-align: center; */
+}
+
+.cta-form-label {
+    font-size: 1.7rem;
+}
+
+.cta form {
+    width:100%;
+}
+
+.cta h2{
+    margin-top: 0;
+
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.filter-icon {
+    color: white;
+}
+
+.filter-button {
+    flex: .15 .15 0px;
+    display: center;
+    background: radial-gradient(circle, rgb(114, 128, 128) 0%, rgb(96, 116, 119) 45%, rgb(95, 119, 119) 100%);
+    border: 0;
+    padding: 1.5%;
+    margin: .5%;
+    color:rgb(253, 251, 251);
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 120%;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: 1px 3px 10px rgba(0,0,0,0.9);
+    outline: none;
+    transition: box-shadow .2s ease-out, outline .2s ease-out;
+}
+
+.filter-button:hover {
+    background: rgb(47,55,55);
+    background: radial-gradient(circle, rgba(47,55,55,1) 0%, rgba(32,48,51,1) 45%, rgba(16,20,20,1) 100%);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.filter-button:focus {
+    background: radial-gradient(circle, rgba(47,55,55,1) 0%, rgba(32,48,51,1) 45%, rgba(16,20,20,1) 100%);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    outline: 5px solid white;
+}
+
+/* MEAL CARDS */
+.meal-list, .filtered-list {
+    /* width:100vw; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 80px 40px;
+}
+
+.meal-card {
+    display: grid;
+    grid-template-columns:280px;
+    grid-template-rows: 210px 180px 80px;
+    grid-template-areas:"image" "text" "diets";
+    font-family: var(--cta-font);
+    color: rgb(90, 89, 89);
+    border-radius: 4%;
+    background-color:white;
+    text-align: left;
+    margin: 1%;
+    text-decoration: none;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    transform: scale(1);
+    transition: box-shadow .2s, transform .2s;
+}
+
+.meal-card:hover {
+    box-shadow: 4px 4px 15px rgba(0,0,0,0.6);
+    transform: scale(1.02);
+}
+
+.meal-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.meal-card-text {
+    grid-area: text;
+    padding: 0px 20px;
+}
+
+.meal-card-diets {
+    grid-area: diets;
+    padding: 0px 20px;
+}
+
+/* LOGIN FORM SECTION */
+.login-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width:250px; */
+    margin-top: 100px;
+    flex-direction: column;
+}
+
+.login-form, .signup-form, .user-profile-form {
+    background-color: rgb(253, 253, 253);
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
+    min-width: 30vw;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-items: stretch;
+    align-items: center;
+}
+
+.login-form h3, .signup-form h3, .user-profile-form h3 {
+    font-size: 1.4rem;
+    font-family: var(--cta-font);
+}
+
+.login-form > div, .signup-form > div, .user-profile-form > div {
+    padding: 10px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-items: stretch;
+}
+
+.login-form input, .signup-form input, .user-profile-form input {
+    color: rgb(59, 59, 59);
+    font-size: 1.06rem;
+    border: 2px solid rgb(219, 219, 219);
+    padding: 15px;
+    border-radius: 3px;
+    min-width: 20rem;
+}
+
+input:focus {
+    outline: none;
+    border: 3px solid #3486eb;
+}
+
+.login-form button, .signup-form button, .user-profile-form button {
+    font-size: 1.06rem;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    padding: 15px;
+    background: linear-gradient(343deg, rgba(64,222,169,1) 0%, rgba(51,187,142,1) 100%);
+    min-width: 20rem;
+    transform: scale(1);
+    transition: background-image 1s, transform .5s;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.login-form button:hover, .signup-form button:hover, .user-profile-form button:hover {
+    background: linear-gradient(343deg, rgba(62,189,146,1) 0%, rgba(29,112,85,1) 100%);
+    transform: scale(1.1);
+}
+
+form label {
+    display: block;
+}
+
+/* SINGLE MEAL PAGE STYLES */
+.single-meal-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5%;
+    justify-content:space-between;
+}
+
+.single-meal-container h3 {
+    font-family: var(--cta-font);
+    font-size: 1.8rem;
+}
+
+.single-meal-container h4 {
+    font-family: var(--cta-font);
+    font-size: 1.2rem;
+}
+
+.single-meal-image {
+    padding: 50px 20px 0px;
+
+}
+
+.single-meal-image img {
+    width: auto;
+    height: 430px;
+
+}
+
+.single-meal-details {
+    background: radial-gradient(circle, rgba(187,217,218,1) 0%, rgba(168,191,193,1) 45%, rgba(140,197,204,0.1) 100%);
+    padding: 20px;
+}
+
+.sub-section {
+    border-bottom: solid 2px rgb(95, 95, 95);
+    padding: 0px 0px 20px 0px;
+}
+
+.diets-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.ingredients-section {
+    padding: 0px 0px 50px 0px;
+    border-bottom: none;
+}
+
+.select-meal-btn {
+    background: rgb(114,189,62);
+    background: linear-gradient(343deg, rgba(114,189,62,1) 0%, rgba(36,112,29,1) 100%);
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 120%;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 12px;
+    width: 100%;
+    transition: background-color .1s;
+}
+
+.select-meal-btn:hover {
+    background: rgb(102,156,65);
+    background: linear-gradient(343deg, rgba(102,156,65,1) 0%, rgba(25,83,20,1) 100%);
+}
+
+.nutrition-info {
+    display: flex;
+    align-content: left;
+    padding: 0;
+    margin: 0;
+}
+
+.nutrition-info li {
+    /* background-color: yellow;
+    outline: solid 2px black; */
+    list-style:none;
+    padding: 0px 50px 20px 0px;
+}
+
+.nutrition-info li p {
+    color: rgb(12, 107, 136);
+    font-size:1.3rem;
+    font-weight: bold;
+    margin: 3px;
+    padding-bottom: 4px;
+}
+
+.nutrition-info li label {
+    font-size: .95rem;
+    color: rgb(48, 47, 47);
+
+}
+
+footer {
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+    font-size: 110%;
+}
+
+.hide {
+    display: none;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.food-image {
+    height: 400px;
+    width: 500px;
+    object-fit: cover;
+}
+
+/* DASHBOARD SECTION */
+.user-profile {
+    background-color: rgb(209, 209, 209);
+    padding: 100px;
+}
+
+.user-meals {
+    /* display: flex;
+    flex-direction: column; */
+
+}
